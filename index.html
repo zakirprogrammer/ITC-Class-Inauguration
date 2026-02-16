@@ -32,7 +32,7 @@
                   
 
             <!-- Inaugurate Button -->
-            <button class="inaugurate-btn" id="inaugurateBtn">
+            <button class="inaugurate-btn" id="inaugurateBtn" href="video.html">
                 Inaugurate
             </button>
         </div>
@@ -43,15 +43,21 @@
 
     <!-- Video Section -->
     <section class="video-section" id="videoSection">
-        <div class="video-container">
-            <video class="video-element" id="fathiaVideo">
-                <source src="fathia.mp4" type="video/mp4">
-                <!-- Fallback message if video doesn't load -->
-                Your browser does not support the video tag.
-            </video>
-            <div class="video-overlay"></div>
-        </div>
-    </section>
+    <div class="video-container">
+
+       <iframe 
+    id="fathiaVideo"
+    class="video-element"
+    src="https://www.youtube.com/embed/pUb9EW770d0"
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+</iframe>
+
+        <div class="video-overlay"></div>
+
+    </div>
+</section>
 
     <script src="script.js"></script>
 </body>
