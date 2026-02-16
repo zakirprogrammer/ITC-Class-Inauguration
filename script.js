@@ -409,7 +409,6 @@
         const inaugurateBtn = document.getElementById('inaugurateBtn');
         const mainContainer = document.getElementById('mainContainer');
         const videoSection = document.getElementById('videoSection');
-        const fathiaVideo = document.getElementById('fathiaVideo');
         
         inaugurateBtn.addEventListener('click', function() {
             // Disable button
@@ -431,12 +430,6 @@
                 // Show video section after fade out begins
                 setTimeout(() => {
                     videoSection.classList.add('active');
-                    
-                    // Try to play video
-                    fathiaVideo.play().catch(e => {
-                        console.log('Video autoplay blocked:', e);
-                        // Show a message or fallback
-                    });
                 }, 800);
             }, 5000);
         });
@@ -444,30 +437,7 @@
         /* ============================================
            VIDEO ERROR HANDLING
            ============================================ */
-        fathiaVideo.addEventListener('error', function() {
-            console.log('Video failed to load. Using fallback.');
-            // Create a fallback message
-            const fallbackDiv = document.createElement('div');
-            fallbackDiv.style.cssText = `
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                color: #D4AF37;
-                font-family: 'Playfair Display', serif;
-                padding: 40px;
-                background: rgba(0, 0, 0, 0.8);
-                border-radius: 20px;
-                border: 2px solid #D4AF37;
-            `;
-            fallbackDiv.innerHTML = `
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">Fathia Surah</h2>
-                <p style="font-size: 1.1rem; opacity: 0.8;">Please add your fathia.mp4 video file to the assets folder</p>
-                <p style="font-size: 0.9rem; margin-top: 15px; opacity: 0.6;">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
-            `;
-            document.querySelector('.video-container').appendChild(fallbackDiv);
-        });
+       
 
         /* ============================================
            KEYBOARD ACCESSIBILITY
